@@ -1,0 +1,47 @@
+<RoadParameter>
+	<InputFiles>
+		<FilePath v="planet-guangdong-zhuhai-highway.db" />		
+	</InputFiles>
+
+	<!-- 路灯LOD -->
+	<StreetLightModel>
+		<FilePath v="../assets/RoadGraphResource/lamp/street_light.3DS" scale="0.02" dis = "1000" />
+		<FilePath v="../assets/RoadGraphResource/lamp/street_light_LOD1.3DS" scale="0.02" dis = "5000" />
+	</StreetLightModel>	
+	<StreetLightColor v="0.87 0.4 0.055" />
+
+	<VehicleNum v="300" />
+	<VehicleOneWayBaseSpeed v="20" />
+	<VehicleNormalWayBaseSpeed v="8.333" />
+
+	<!-- 该属性用来以车的视角来控制相机, v的值用来指定用哪个车来控制相机， v的值小于1或者大于车辆数量表示不指定-->
+	<VehicleView v="0" />
+
+	<StartShowVehicleDistance v="2000.0" />
+
+	<VehicleModel>
+		<FilePath v="../assets/RoadGraphResource\car\c2\c2.fbx" scale="0.6" />
+		<FilePath v="../assets/RoadGraphResource\ca\c5\c5.fbx" scale="0.6" />
+		<FilePath v="../assets/RoadGraphResource/car/2/2.3DS" scale="0.016" />
+		<FilePath v="../assets/RoadGraphResource/car/yellow/yellow.3DS" scale="0.007" />
+	</VehicleModel>
+
+	<RoadTextures>
+		<FilePath v="../assets/RoadGraphResource/asphalt.jpg" name="asphalt"/>
+		<FilePath v="../assets/RoadGraphResource/curb.jpg" name="curb"/>
+		<FilePath v="../assets/RoadGraphResource/zebra.jpg" name="zebra"/>
+	</RoadTextures>
+
+	<!-- 18层的块宽度是64m -->
+	<!-- 生成数据时 层数（splitlevel）是第几层，那么最后绘制时也要对应，不然索引不到，这点要注意 -->
+	<RoadLOD>
+		<SplitLvel v="13" />
+		<StartShowRoadHeight v="10000" />
+		<StartShowMarkerLineHeight v="5000" />
+		<BlockHalfWidth v="15" />
+		<PreLoadBlockHalfWidth v="5"/>
+		<ShowStreetLight v="1"/>
+		<ShowLightFlash v="1"/>
+		<ShowRoadMesh v="1"/>
+	</RoadLOD>
+</RoadParameter>

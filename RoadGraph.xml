@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin name="RoadGraph" version="1.0">
+  <Author>ligang</Author>
+  <Prerequisites>
+  </Prerequisites>
+  <Module>RoadGraph.dll</Module>
+  <UISection>
+  </UISection>
+  <ParameterSection></ParameterSection>
+</plugin>

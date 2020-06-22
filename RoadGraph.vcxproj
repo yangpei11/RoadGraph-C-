@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9B811583-8BDD-4837-ACB1-67DFC930E1DC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>RoadGraph</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\ViwoCommon.props" />
+    <Import Project="..\MultiprocCpp.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\ViwoCommon.props" />
+    <Import Project="..\MultiprocCpp.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ROADGRAPH_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)ClientCore;$(SolutionDir)VPE_infra;$(SolutionDir)TinyGLUtils;$(SolutionDir)Plugin_RenderSystem_GL;$(SolutionDir)App_EditClientSdk;$(SolutionDir)HttpNetwork;$(SolutionDir)App.MTTerrainSdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib;gdi32.lib;libgmp-10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(OutDir)RoadGraphResource MD $(SolutionDir)output\assets\RoadGraphResource
+IF NOT EXIST $(OutDir)xml MD $(SolutionDir)output\xml
+XCOPY $(ProjectDir)RoadGraphResource $(SolutionDir)output\assets\RoadGraphResource /E /I /F /K /Y
+xcopy /D /R /C /Y  $(ProjectDir)RoadGraph.xml $(SolutionDir)output\xml\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ROADGRAPH_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)ClientCore;$(SolutionDir)VPE_infra;$(SolutionDir)TinyGLUtils;$(SolutionDir)Plugin_RenderSystem_GL;$(SolutionDir)App_EditClientSdk;$(SolutionDir)HttpNetwork;$(SolutionDir)App.MTTerrainSdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib;gdi32.lib;libgmp-10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(OutDir)RoadGraphResource MD $(SolutionDir)output\assets\RoadGraphResource
+IF NOT EXIST $(OutDir)xml MD $(SolutionDir)output\xml
+XCOPY $(ProjectDir)RoadGraphResource $(SolutionDir)output\assets\RoadGraphResource /E /I /F /K /Y
+xcopy /D /R /C /Y  $(ProjectDir)RoadGraph.xml $(SolutionDir)output\xml\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonRoadType.h" />
+    <ClInclude Include="OSMDataLoader.h" />
+    <ClInclude Include="RoadIntersection.h" />
+    <ClInclude Include="ArcRoad.h" />
+    <ClInclude Include="RoadConstructor.h" />
+    <ClInclude Include="RoadEdge.h" />
+    <ClInclude Include="RoadFeature.h" />
+    <ClInclude Include="RoadGraph.h" />
+    <ClInclude Include="RoadGraphInterface.h" />
+    <ClInclude Include="RoadGraphLib.h" />
+    <ClInclude Include="RoadNode.h" />
+    <ClInclude Include="RoadRender.h" />
+    <ClInclude Include="RoadTextureCollection.h" />
+    <ClInclude Include="RoadUtils.h" />
+    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="VehicleManager.h" />
+    <ClInclude Include="VehicleSchedule.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.MTTerrainSdk\App_MTTerrainSdk.vcxproj">
+      <Project>{703092e5-cead-42a6-a620-c021c15398e2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\App_EditClientSdk\App_EditClientSdk.vcxproj">
+      <Project>{ccb8b59d-da83-46a0-89a1-f1ecc7c8fd54}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ClientCore\ClientCore.vcxproj">
+      <Project>{dbd32912-59b2-4dd5-bd4f-ca1c6286c0cb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin_RenderSystem_GL\Plugin_RenderSystem_GL.vcxproj">
+      <Project>{9ce03565-ec93-4663-8c4a-2fb06d06d25e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TinyGLUtils\TinyGLUtils.vcxproj">
+      <Project>{55b4bda0-1566-49fc-bc86-ac69625fa872}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\HttpNetwork\HttpNetwork.vcxproj">
+      <Project>{5dadf245-b37f-4465-a132-c63ecadbda13}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\VPE_infra\VPE_infra.vcxproj">
+      <Project>{188f10cc-87f2-4d65-8eef-e1fd63a8f5e9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OSMDataLoader.cpp" />
+    <ClCompile Include="RoadIntersection.cpp" />
+    <ClCompile Include="ArcRoad.cpp" />
+    <ClCompile Include="RoadConstructor.cpp" />
+    <ClCompile Include="RoadEdge.cpp" />
+    <ClCompile Include="RoadFeature.cpp" />
+    <ClCompile Include="RoadGraph.cpp" />
+    <ClCompile Include="RoadGraphExport.cpp" />
+    <ClCompile Include="RoadGraphInterface.cpp" />
+    <ClCompile Include="RoadRender.cpp" />
+    <ClCompile Include="RoadTextureCollection.cpp" />
+    <ClCompile Include="RoadUtils.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="VehicleManager.cpp" />
+    <ClCompile Include="VehicleSchedule.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="道路属性解释.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

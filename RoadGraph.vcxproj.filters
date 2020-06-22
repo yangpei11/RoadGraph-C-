@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Vehicle">
+      <UniqueIdentifier>{7381d484-0305-4dcd-8c09-88d8d5405024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RoadGraph">
+      <UniqueIdentifier>{5d3d6df3-ab9c-4a6b-a70e-81c0fe73dd21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constructor">
+      <UniqueIdentifier>{88df811a-27eb-43fc-aa72-ce6c765b5e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{011ef0e2-d8a7-4f13-b3eb-c4e458e28b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{50ab1954-09f8-42c2-bfdb-5da1337cc2f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RoadGraphLib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadGraphInterface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonRoadType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.h">
+      <Filter>Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleSchedule.h">
+      <Filter>Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleManager.h">
+      <Filter>Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadEdge.h">
+      <Filter>RoadGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadFeature.h">
+      <Filter>RoadGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadGraph.h">
+      <Filter>RoadGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadNode.h">
+      <Filter>RoadGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadConstructor.h">
+      <Filter>Constructor</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadTextureCollection.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadRender.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="ArcRoad.h">
+      <Filter>Constructor</Filter>
+    </ClInclude>
+    <ClInclude Include="OSMDataLoader.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadIntersection.h">
+      <Filter>Constructor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RoadGraphInterface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadGraphExport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp">
+      <Filter>Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="VehicleSchedule.cpp">
+      <Filter>Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="VehicleManager.cpp">
+      <Filter>Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadEdge.cpp">
+      <Filter>RoadGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadGraph.cpp">
+      <Filter>RoadGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadFeature.cpp">
+      <Filter>RoadGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadConstructor.cpp">
+      <Filter>Constructor</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadTextureCollection.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadRender.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="ArcRoad.cpp">
+      <Filter>Constructor</Filter>
+    </ClCompile>
+    <ClCompile Include="OSMDataLoader.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadIntersection.cpp">
+      <Filter>Constructor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="道路属性解释.txt" />
+  </ItemGroup>
+</Project>

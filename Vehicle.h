@@ -80,3 +80,4 @@ protected:
 
     std::vector<VPE::Entity> lights_;
 };
+a

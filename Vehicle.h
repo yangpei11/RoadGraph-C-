@@ -80,4 +80,8 @@ protected:
 
     std::vector<VPE::Entity> lights_;
 };
+<<<<<<< HEAD
 a
+=======
+cc
+>>>>>>> f78f419... dsad

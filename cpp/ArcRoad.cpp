@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 #include "ArcRoad.h"
 
 
@@ -125,20 +126,18 @@ void ArcRoad::generateArcPoints(int i, double dis) {
 	else {
 		roateFlag = false;
 	}
+	
 	VPE::dvec2 start1 = OM;
-	VPE::dvec2 collinearPoint = O + start1;
+	/*VPE::dvec2 collinearPoint = O + start1;
 	VPE::dvec2 v1 = collinearPoint - out_points.back();
 	VPE::dvec2 v2 = VPE::dvec2(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y);
-
+	*/
 
 	double roateAngle = 0.0;
 	double tmp;
-	int ans = 0;
-	int begin = out_points.size();
 	//double step = 5.0 / VPE::length(OM); ²½³¤Îª5m
 	//double step = 2 * VPE::asin(2.5 / VPE::length(OM));
 	double step = 0.01;
-	auto e = VPE::length(OM);
 	while (roateAngle <= angle) {
 		tmp = roateAngle;
 		if (roateFlag == 0) {
@@ -151,7 +150,6 @@ void ArcRoad::generateArcPoints(int i, double dis) {
 
 		roateAngle = tmp;
 		roateAngle += step;
-		ans++;
 	}
 }
 

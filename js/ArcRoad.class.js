@@ -173,8 +173,6 @@ class ArcRoad
 			{
 				return this.#outPoints
 			}
-			this.#outPoints.push(this.#points[0])
-			this.#outPoints.push(this.#points[1])
 		}
 		else
 		{

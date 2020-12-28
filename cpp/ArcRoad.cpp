@@ -109,9 +109,9 @@ void ArcRoad::generateArcPoints(int i, double dis) {
 	VPE::dvec2 n2 = VPE::normalize(VPE::dvec2(points[i + 1].x - points[i].x, points[i + 1].y - points[i].y));
 	VPE::dvec2 b = VPE::normalize(n2 - n1);
 	double beishu = dis * VPE::sqrt((1 + VPE::dot(n1, n2)) / (1 - VPE::dot(n1, n2)) + 1);
-	VPE::dvec2 O = VPE::dvec2(points[i].x, points[i].y) + VPE::dvec2(b.x * beishu, b.y * beishu);
-	VPE::dvec2 M = VPE::dvec2(points[i].x, points[i].y) + VPE::dvec2(n1.x * (-dis), n1.y * (-dis));
-	VPE::dvec2 N = VPE::dvec2(points[i].x, points[i].y) + VPE::dvec2(n2.x * dis, n2.y * dis);
+	VPE::dvec2 O = points[i] + VPE::dvec2(b.x * beishu, b.y * beishu);
+	VPE::dvec2 M = points[i] + VPE::dvec2(n1.x * (-dis), n1.y * (-dis));
+	VPE::dvec2 N = points[i] + VPE::dvec2(n2.x * dis, n2.y * dis);
 	VPE::dvec2 OM = M - O;
 	VPE::dvec2 ON = N - O;
 	VPE::dvec2 start = OM;
@@ -158,8 +158,6 @@ std::vector<VPE::dvec2> &ArcRoad::generatePoints() {
 		if (VPE::distance(points[0], points[1]) < 0.01) {
 			return out_points;
 		}
-		out_points.push_back(points[0]);
-		out_points.push_back(points[1]);
 	}
 	else {
 		int n = points.size();

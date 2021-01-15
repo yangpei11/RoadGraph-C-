@@ -29,12 +29,12 @@
 - Input format introduction：输入包括node节点和way节点，node表示点，way节点中的nd节点ref属性来自于node的ID，表示一条道路.
 
 ## 坐标转换
-二维坐标向三维坐标的转换可以通过（lon, lat）获取搞成，我们的系统是
+二维坐标向三维坐标的转换可以通过（lon, lat）获取，我们的系统是
 ```cpp
 double alt = ViWoROOT::GetTerrainInterface()->GetPreciseElevation(lon, lat);
 ```
-经纬高坐标必须转换成每个系统坐标系的全局坐标```（lon, lat, alt） -> (x, y, z)```.
-本文的全局坐标系统是地球球坐标系统，最后需要转换成局部坐标计算
+经纬高坐标转换成每个系统坐标系的全局坐标```（lon, lat, alt） -> (x, y, z)```.
+系统的全局坐标系统是地球球坐标系统，最后需要转换成局部坐标计算
 
 **局部坐标系** 
 ![局部坐标系](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/1.png  "局部坐标系")

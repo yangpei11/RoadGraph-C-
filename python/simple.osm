@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <bounds minlat='22.454' minlon='113.863' maxlat='22.579' maxlon='114.0000002' origin='osmconvert 0.8.4' />
+  <node id='1' version='A' x ='2' y='2' />
+  <node id='2' version='B' x ='4' y='-1' />
+  <node id='3' version='C' x ='7' y='-2' />
+  <node id='4' version='D' x ='9' y='1' />
+  <node id='5' version='F' x ='8' y='4' />
+  <node id='6' version='E' x ='6' y='4' />
+  <node id='7' version='G' x ='3' y='4' />
+  <node id='8' version='M' x ='6' y='7' />
+  <node id='9' version='K' x ='3' y='7' />
+  <node id='10' version='L' x ='10' y='7' />
+  <node id='11' version='J' x ='9' y='11' />
+  <node id='12' version='H' x ='6' y= '13' />
+  <node id='13' version='I' x ='3' y='11' />
+
+  <way id='14' version='1'>
+    <nd ref='6' />
+    <nd ref='7' />
+    <nd ref='1' />
+    <nd ref='2' />
+    <nd ref='3' />
+    <nd ref='4' />
+    <nd ref='5' />
+    <nd ref='6' />
+  </way>
+
+  <way id='15' version='1'>
+    <nd ref='6' />
+    <nd ref='8' />
+    <nd ref='12' />
+  </way>
+
+  <way id='16' version='1'>
+    <nd ref='8' />
+    <nd ref='10' />
+    <nd ref='11' />
+    <nd ref='12' />
+  </way>
+
+  <way id='16' version='1'>
+    <nd ref='8' />
+    <nd ref='9' />
+    <nd ref='13' />
+    <nd ref='12' />
+  </way>
+</osm>

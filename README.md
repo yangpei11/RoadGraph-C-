@@ -71,10 +71,10 @@ OSM中道路节点连接起来就是折现线段，然后现实生活中基本�
 ![fig4](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/example4.png)
 
 **复杂道路**
-![fig5](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/s.png)
+![fig5](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/s.jpg)
 
 **与谷歌卫星影像的对比**
-![fig6](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/s.png)
+![fig6](https://github.com/yangpei11/RoadGraph-C-/blob/master/Figure/example5.png)
 
 
 

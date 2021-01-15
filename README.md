@@ -35,8 +35,9 @@ double alt = ViWoROOT::GetTerrainInterface()->GetPreciseElevation(lon, lat);
 ```
 经纬高坐标必须转换成每个系统坐标系的全局坐标```（lon, lat, alt） -> (x, y, z)```.
 本文的全局坐标系统是地球球坐标系统，最后需要转换成局部坐标计算
-**局部坐标系** 
-![局部坐标系](https://github.com/yangpei11/RoadGraph-C-/tree/master/Figure/1.png  "局部坐标系")
+
+**22** 
+![fig1](https://github.com/yangpei11/RoadGraph-C-/tree/master/Figure/1.png  "11")
 
 ## 数学建模
 ![道路折线](https://github.com/yangpei11/RoadGraph-C-/tree/master/Figure/2.png)
